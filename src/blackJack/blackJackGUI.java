@@ -23,18 +23,13 @@ public class blackJackGUI extends JFrame {
 
 	gameLogic gameObject = new gameLogic();
 	
-	JLabel playerCardOne;
-	JLabel playerCardTwo;
-	JLabel playerCardThree;
-	JLabel playerCardFour;
-	JLabel playerCardFive;
-	JLabel playerCardSix;
-	JLabel playerCardSeven;
-	
-	JLabel playerTotal;
+	JLabel playerCardOne, playerCardTwo, playerCardThree, playerCardFour, playerCardFive, playerCardSix, playerCardSeven;	
+	JLabel comCardOne, comCardTwo, comCardThree, comCardFour, comCardFive, comCardSix, comCardSeven;
+	JLabel playerTotal, computerTotal;
 //	int playerHand = 0;
 //	
-	int currentCard = 1;
+	int playCurrentCard = 1;
+	int comCurrentCard = 1;
 	
 	private JPanel contentPane;
 
@@ -81,56 +76,56 @@ public class blackJackGUI extends JFrame {
 		score.setBounds(960, 13, 58, 16);
 		contentPane.add(score);
 		
-		JLabel comCardOne = new JLabel("New label");
+		comCardOne = new JLabel("New label");
+		//comCardOne.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
 		comCardOne.setMaximumSize(new Dimension(500, 727));
 		comCardOne.setMinimumSize(new Dimension(500, 727));
 		comCardOne.setPreferredSize(new Dimension(500, 727));
-		comCardOne.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
 		comCardOne.setBounds(64, 13, 100, 145);
 		contentPane.add(comCardOne);
 		
-		JLabel comCardTwo = new JLabel("New label");
-		comCardTwo.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		comCardTwo = new JLabel("New label");
+		//comCardTwo.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
 		comCardTwo.setPreferredSize(new Dimension(500, 727));
 		comCardTwo.setMinimumSize(new Dimension(500, 727));
 		comCardTwo.setMaximumSize(new Dimension(500, 727));
 		comCardTwo.setBounds(176, 13, 100, 145);
 		contentPane.add(comCardTwo);
 		
-		JLabel comCardThree = new JLabel("New label");
-		comCardThree.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		comCardThree = new JLabel("New label");
+		//comCardThree.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
 		comCardThree.setPreferredSize(new Dimension(500, 727));
 		comCardThree.setMinimumSize(new Dimension(500, 727));
 		comCardThree.setMaximumSize(new Dimension(500, 727));
 		comCardThree.setBounds(290, 13, 100, 145);
 		contentPane.add(comCardThree);
 		
-		JLabel comCardFour = new JLabel("New label");
-		comCardFour.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		comCardFour = new JLabel("New label");
+		//comCardFour.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
 		comCardFour.setPreferredSize(new Dimension(500, 727));
 		comCardFour.setMinimumSize(new Dimension(500, 727));
 		comCardFour.setMaximumSize(new Dimension(500, 727));
 		comCardFour.setBounds(402, 13, 100, 145);
 		contentPane.add(comCardFour);
 		
-		JLabel comCardFive = new JLabel("New label");
-		comCardFive.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		comCardFive = new JLabel("New label");
+		//comCardFive.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
 		comCardFive.setPreferredSize(new Dimension(500, 727));
 		comCardFive.setMinimumSize(new Dimension(500, 727));
 		comCardFive.setMaximumSize(new Dimension(500, 727));
 		comCardFive.setBounds(519, 13, 100, 145);
 		contentPane.add(comCardFive);
 		
-		JLabel comCardSix = new JLabel("New label");
-		comCardSix.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		comCardSix = new JLabel("New label");
+		//comCardSix.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
 		comCardSix.setPreferredSize(new Dimension(500, 727));
 		comCardSix.setMinimumSize(new Dimension(500, 727));
 		comCardSix.setMaximumSize(new Dimension(500, 727));
 		comCardSix.setBounds(633, 13, 100, 145);
 		contentPane.add(comCardSix);
 		
-		JLabel comCardSeven = new JLabel("New label");
-		comCardSeven.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		comCardSeven = new JLabel("New label");
+		//comCardSeven.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
 		comCardSeven.setPreferredSize(new Dimension(500, 727));
 		comCardSeven.setMinimumSize(new Dimension(500, 727));
 		comCardSeven.setMaximumSize(new Dimension(500, 727));
@@ -196,48 +191,70 @@ public class blackJackGUI extends JFrame {
 		JButton btnHit = new JButton("Hit");
 		btnHit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {				
-				switch(currentCard){
+				switch(playCurrentCard){
 				case 1:
-					playerCardOne.setText(gameObject.cardInfo("player"));
 					//playerHand += playerCard.getRank().getValue();
+					playerCardOne.setText(gameObject.cardInfo("player"));
 					playerTotal.setText(gameObject.updatePlayerHand());
-					currentCard++;
+					comCardOne.setText(gameObject.cardInfo("computer"));
+					computerTotal.setText(gameObject.updateComputerHand());				
+					playCurrentCard++;
+					comCurrentCard++;
 					break;
 				case 2:
-					playerCardTwo.setText(gameObject.cardInfo("player"));
 					//playerHand += playerCard.getRank().getValue();
+					playerCardTwo.setText(gameObject.cardInfo("player"));
 					playerTotal.setText(gameObject.updatePlayerHand());
-					currentCard++;
+					comCardTwo.setText(gameObject.cardInfo("computer"));
+					computerTotal.setText(gameObject.updateComputerHand());				
+					playCurrentCard++;
+					comCurrentCard++;
 					break;
 				case 3:
-					playerCardThree.setText(gameObject.cardInfo("player"));
 					//playerHand += playerCard.getRank().getValue();
+					playerCardThree.setText(gameObject.cardInfo("player"));
 					playerTotal.setText(gameObject.updatePlayerHand());
-					currentCard++;
+					comCardThree.setText(gameObject.cardInfo("computer"));
+					computerTotal.setText(gameObject.updateComputerHand());				
+					playCurrentCard++;
+					comCurrentCard++;
 					break;
 				case 4:
-					playerCardFour.setText(gameObject.cardInfo("player"));
 					//playerHand += playerCard.getRank().getValue();
+					playerCardFour.setText(gameObject.cardInfo("player"));
 					playerTotal.setText(gameObject.updatePlayerHand());
-					currentCard++;
+					comCardFour.setText(gameObject.cardInfo("computer"));
+					computerTotal.setText(gameObject.updateComputerHand());				
+					playCurrentCard++;
+					comCurrentCard++;
 					break;
 				case 5:
-					playerCardFive.setText(gameObject.cardInfo("player"));
 					//playerHand += playerCard.getRank().getValue();
+					playerCardFive.setText(gameObject.cardInfo("player"));
 					playerTotal.setText(gameObject.updatePlayerHand());
-					currentCard++;
+					comCardFive.setText(gameObject.cardInfo("computer"));
+					computerTotal.setText(gameObject.updateComputerHand());				
+					playCurrentCard++;
+					comCurrentCard++;
 					break;
 				case 6:
-					playerCardSix.setText(gameObject.cardInfo("player"));
 					//playerHand += playerCard.getRank().getValue();
+					playerCardSix.setText(gameObject.cardInfo("player"));
 					playerTotal.setText(gameObject.updatePlayerHand());
-					currentCard++;
+					comCardSix.setText(gameObject.cardInfo("computer"));
+					computerTotal.setText(gameObject.updateComputerHand());				
+					playCurrentCard++;
+					comCurrentCard++;
 					break;
 				case 7:
-					playerCardSeven.setText(gameObject.cardInfo("player"));
 					//playerHand += playerCard.getRank().getValue();
+					playerCardSeven.setText(gameObject.cardInfo("player"));
 					playerTotal.setText(gameObject.updatePlayerHand());
-					currentCard++;
+					comCardSeven.setText(gameObject.cardInfo("computer"));
+					computerTotal.setText(gameObject.updateComputerHand());				
+					playCurrentCard++;
+					comCurrentCard++;
+					break;
 				default:
 					break;
 				}
@@ -251,6 +268,45 @@ public class blackJackGUI extends JFrame {
 		JButton btnStay = new JButton("Stay");
 		btnStay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				switch(comCurrentCard){
+				case 1:
+					comCardOne.setText(gameObject.cardInfo("computer"));
+					computerTotal.setText(gameObject.updateComputerHand());				
+					comCurrentCard++;
+					break;
+				case 2:
+					comCardTwo.setText(gameObject.cardInfo("computer"));
+					computerTotal.setText(gameObject.updateComputerHand());				
+					comCurrentCard++;
+					break;
+				case 3:
+					comCardThree.setText(gameObject.cardInfo("computer"));
+					computerTotal.setText(gameObject.updateComputerHand());				
+					comCurrentCard++;
+					break;
+				case 4:
+					comCardFour.setText(gameObject.cardInfo("computer"));
+					computerTotal.setText(gameObject.updateComputerHand());				
+					comCurrentCard++;
+					break;
+				case 5:
+					comCardFive.setText(gameObject.cardInfo("computer"));
+					computerTotal.setText(gameObject.updateComputerHand());				
+					comCurrentCard++;
+					break;
+				case 6:
+					comCardSix.setText(gameObject.cardInfo("computer"));
+					computerTotal.setText(gameObject.updateComputerHand());				
+					comCurrentCard++;
+					break;
+				case 7:
+					comCardSeven.setText(gameObject.cardInfo("computer"));
+					computerTotal.setText(gameObject.updateComputerHand());				
+					comCurrentCard++;
+					break;
+				default:
+					break;
+				}
 			}
 		});
 		btnStay.setFont(new Font("Times New Roman", Font.PLAIN, 20));
@@ -272,7 +328,7 @@ public class blackJackGUI extends JFrame {
 		computerTotalLabel.setBounds(334, 204, 140, 24);
 		contentPane.add(computerTotalLabel);
 		
-		JLabel computerTotal = new JLabel("0");
+		computerTotal = new JLabel("0");
 		computerTotal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		computerTotal.setBackground(Color.LIGHT_GRAY);
 		computerTotal.setHorizontalAlignment(SwingConstants.LEFT);

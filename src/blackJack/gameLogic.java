@@ -16,9 +16,7 @@ public class gameLogic {
 		//test comment
 		
 	}
-	public void computerTurn(){
-		
-	}
+
 	public String cardInfo(String current){
 		if(current.equals("player")){
 			playerCard = deck.draw();
@@ -31,5 +29,10 @@ public class gameLogic {
 	public String updatePlayerHand(){
 		playerHand += playerCard.getRank().getValue();
 		return String.valueOf(playerHand);
+	}
+	
+	public String updateComputerHand(){
+		computerHand += computerCard.getRank().getValue();
+		return String.valueOf(computerHand);
 	}
 }
