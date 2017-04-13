@@ -233,11 +233,12 @@ public class blackJackGUI extends JFrame {
 					playerTotal.setText(gameObject.updatePlayerHand());
 					currentCard++;
 					break;
-				default:
+				case 7:
 					playerCardSeven.setText(gameObject.cardInfo("player"));
 					//playerHand += playerCard.getRank().getValue();
 					playerTotal.setText(gameObject.updatePlayerHand());
 					currentCard++;
+				default:
 					break;
 				}
 				
