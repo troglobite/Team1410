@@ -16,6 +16,7 @@ public class Card {
 		return rank;
 	}
 	
+	
 	@Override
 	public String toString(){
 		return rank + " of " + suite;

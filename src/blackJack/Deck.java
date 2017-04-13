@@ -1,6 +1,7 @@
 package blackJack;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Deck {
@@ -15,6 +16,9 @@ public class Deck {
 				deck.add(new Card(suite, rank));
 			}
 		}
+		//always shuffle twice
+		Collections.shuffle(deck);
+		Collections.shuffle(deck);
 	}
 	
 	public Card draw(){
