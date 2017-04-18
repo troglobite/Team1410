@@ -39,7 +39,9 @@ public class gameLogic {
 		if(user.equals("player")) {
 			playerCards.reverseOrder();
 			for(Card el : playerCards) {
+				// Checks for the ace rank.
 				if(el.getRank().getValue() == 1) {
+					// Checks whether or not ace should be alt value of 11.
 					if(playerHand + el.getRank().getValueAlt() > 21) {
 						playerHand += el.getRank().getValue();
 					} else {
@@ -53,7 +55,9 @@ public class gameLogic {
 		} else {
 			computerCards.reverseOrder();
 			for(Card el : computerCards) {
+				// Checks for ace rank.
 				if(el.getRank().getValue() == 1) {
+					// Checks whether or not ace should be alt value of 11.
 					if(computerHand + el.getRank().getValueAlt() > 21) {
 						computerHand += el.getRank().getValue();
 					} else {

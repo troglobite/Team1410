@@ -223,7 +223,6 @@ public class blackJackGUI extends JFrame {
 					}
 					break;
 				case 3:
-					//playerHand += playerCard.getRank().getValue();
 					playerCardThree.setText(gameObject.cardInfo("player"));
 					playerTotal.setText(gameObject.generateHandTotal("player"));
 					comCardThree.setText(gameObject.cardInfo("computer"));
@@ -238,7 +237,6 @@ public class blackJackGUI extends JFrame {
 					}
 					break;
 				case 4:
-					//playerHand += playerCard.getRank().getValue();
 					playerCardFour.setText(gameObject.cardInfo("player"));
 					playerTotal.setText(gameObject.generateHandTotal("player"));
 					comCardFour.setText(gameObject.cardInfo("computer"));
@@ -253,7 +251,6 @@ public class blackJackGUI extends JFrame {
 					}
 					break;
 				case 5:
-					//playerHand += playerCard.getRank().getValue();
 					playerCardFive.setText(gameObject.cardInfo("player"));
 					playerTotal.setText(gameObject.generateHandTotal("player"));
 					comCardFive.setText(gameObject.cardInfo("computer"));
@@ -268,7 +265,6 @@ public class blackJackGUI extends JFrame {
 					}
 					break;
 				case 6:
-					//playerHand += playerCard.getRank().getValue();
 					playerCardSix.setText(gameObject.cardInfo("player"));
 					playerTotal.setText(gameObject.generateHandTotal("player"));
 					comCardSix.setText(gameObject.cardInfo("computer"));
@@ -283,7 +279,6 @@ public class blackJackGUI extends JFrame {
 					}
 					break;
 				case 7:
-					//playerHand += playerCard.getRank().getValue();
 					playerCardSeven.setText(gameObject.cardInfo("player"));
 					playerTotal.setText(gameObject.generateHandTotal("player"));
 					comCardSeven.setText(gameObject.cardInfo("computer"));
