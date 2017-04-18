@@ -1,8 +1,6 @@
 package blackJack;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import javax.swing.ImageIcon;
 
 public class gameLogic {
 	
@@ -20,16 +18,26 @@ public class gameLogic {
 		computerCards.clearDeck();
 	}
 
-	public String cardInfo(String current){
+	public Card cardInfo(String current){
 		if(current.equals("player")){
 			playerCard = deck.draw();
 			playerCards.addCard(playerCard);
-			return playerCard.toString();
+			return playerCard;
 		}else{
 			computerCard = deck.draw();
 			computerCards.addCard(computerCard);
-			return computerCard.toString();
+			return computerCard;
 		}
+	}
+	
+	public ImageIcon placeCard(Card userCard) {
+		String cardRank = userCard.getRank().toString();
+		String cardSuite = userCard.getSuite().toString();
+		StringBuilder sb = new StringBuilder();
+		sb.append("res/" + cardRank.toLowerCase() + "_of_" + cardSuite.toLowerCase());
+		String fileLocation = sb.toString();
+		System.out.println(fileLocation);
+		return new ImageIcon(fileLocation);
 	}
 	
 	public String generateHandTotal(String user) {
