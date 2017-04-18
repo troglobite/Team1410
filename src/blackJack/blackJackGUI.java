@@ -10,6 +10,7 @@ import java.awt.Window.Type;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.ImageIcon;
@@ -197,99 +198,169 @@ public class blackJackGUI extends JFrame {
 				case 1:
 					playerCardOne.setText(gameObject.cardInfo("player"));
 					playerTotal.setText(gameObject.generateHandTotal("player"));
-					comCardOne.setText(gameObject.cardInfo("computer"));
-					computerTotal.setText(gameObject.generateHandTotal("computer"));				
 					playCurrentCard++;
-					comCurrentCard++;
+					
+					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 1) {
+						comCardOne.setText(gameObject.cardInfo("computer"));
+						computerTotal.setText(gameObject.generateHandTotal("computer"));
+						comCurrentCard++;
+					}
 					
 					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0) {
 						btnHit.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The player has won!");
+					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2) {
+						btnHit.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The player has busted!");
 					} else if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						btnStay.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The computer has won!");
+					} else if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+						JOptionPane.showMessageDialog(null, "The computer has busted!");
 					}
 					break;
 				case 2:
 					playerCardTwo.setText(gameObject.cardInfo("player"));
-					playerTotal.setText(gameObject.generateHandTotal("player"));
-					comCardTwo.setText(gameObject.cardInfo("computer"));
-					computerTotal.setText(gameObject.generateHandTotal("computer"));				
+					playerTotal.setText(gameObject.generateHandTotal("player"));				
 					playCurrentCard++;
-					comCurrentCard++;
+					
+					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 1) {
+						comCardTwo.setText(gameObject.cardInfo("computer"));
+						computerTotal.setText(gameObject.generateHandTotal("computer"));
+						comCurrentCard++;
+					}
 					
 					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0) {
 						btnHit.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The player has won!");
+					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2) {
+						btnHit.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The player has busted!");
 					} else if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						btnStay.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The computer has won!");
+					} else if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+						JOptionPane.showMessageDialog(null, "The computer has busted!");
 					}
 					break;
 				case 3:
 					playerCardThree.setText(gameObject.cardInfo("player"));
-					playerTotal.setText(gameObject.generateHandTotal("player"));
-					comCardThree.setText(gameObject.cardInfo("computer"));
-					computerTotal.setText(gameObject.generateHandTotal("computer"));				
+					playerTotal.setText(gameObject.generateHandTotal("player"));				
 					playCurrentCard++;
-					comCurrentCard++;
+					
+					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 1) {
+						comCardThree.setText(gameObject.cardInfo("computer"));
+						computerTotal.setText(gameObject.generateHandTotal("computer"));
+						comCurrentCard++;
+					}
 					
 					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0) {
 						btnHit.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The player has won!");
+					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2) {
+						btnHit.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The player has busted!");
 					} else if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						btnStay.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The computer has won!");
+					} else if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+						JOptionPane.showMessageDialog(null, "The computer has busted!");
 					}
 					break;
 				case 4:
 					playerCardFour.setText(gameObject.cardInfo("player"));
-					playerTotal.setText(gameObject.generateHandTotal("player"));
-					comCardFour.setText(gameObject.cardInfo("computer"));
-					computerTotal.setText(gameObject.generateHandTotal("computer"));				
+					playerTotal.setText(gameObject.generateHandTotal("player"));				
 					playCurrentCard++;
-					comCurrentCard++;
+					
+					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 1) {
+						comCardFour.setText(gameObject.cardInfo("computer"));
+						computerTotal.setText(gameObject.generateHandTotal("computer"));
+						comCurrentCard++;
+					}
 					
 					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0) {
 						btnHit.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The player has won!");
+					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2) {
+						btnHit.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The player has busted!");
 					} else if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						btnStay.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The computer has won!");
+					} else if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+						JOptionPane.showMessageDialog(null, "The computer has busted!");
 					}
 					break;
 				case 5:
 					playerCardFive.setText(gameObject.cardInfo("player"));
-					playerTotal.setText(gameObject.generateHandTotal("player"));
-					comCardFive.setText(gameObject.cardInfo("computer"));
-					computerTotal.setText(gameObject.generateHandTotal("computer"));				
+					playerTotal.setText(gameObject.generateHandTotal("player"));				
 					playCurrentCard++;
-					comCurrentCard++;
+					
+					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 1) {
+						comCardFive.setText(gameObject.cardInfo("computer"));
+						computerTotal.setText(gameObject.generateHandTotal("computer"));
+						comCurrentCard++;
+					}
 					
 					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0) {
 						btnHit.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The player has won!");
+					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2) {
+						btnHit.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The player has busted!");
 					} else if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						btnStay.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The computer has won!");
+					} else if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+						JOptionPane.showMessageDialog(null, "The computer has busted!");
 					}
 					break;
 				case 6:
 					playerCardSix.setText(gameObject.cardInfo("player"));
-					playerTotal.setText(gameObject.generateHandTotal("player"));
-					comCardSix.setText(gameObject.cardInfo("computer"));
-					computerTotal.setText(gameObject.generateHandTotal("computer"));				
+					playerTotal.setText(gameObject.generateHandTotal("player"));		
 					playCurrentCard++;
-					comCurrentCard++;
+					
+					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 1) {
+						comCardSix.setText(gameObject.cardInfo("computer"));
+						computerTotal.setText(gameObject.generateHandTotal("computer"));
+						comCurrentCard++;
+					}
 					
 					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0) {
 						btnHit.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The player has won!");
+					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2) {
+						btnHit.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The player has busted!");
 					} else if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						btnStay.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The computer has won!");
+					} else if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+						JOptionPane.showMessageDialog(null, "The computer has busted!");
 					}
 					break;
 				case 7:
 					playerCardSeven.setText(gameObject.cardInfo("player"));
-					playerTotal.setText(gameObject.generateHandTotal("player"));
-					comCardSeven.setText(gameObject.cardInfo("computer"));
-					computerTotal.setText(gameObject.generateHandTotal("computer"));				
+					playerTotal.setText(gameObject.generateHandTotal("player"));				
 					playCurrentCard++;
-					comCurrentCard++;
+					
+					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 1) {
+						comCardSeven.setText(gameObject.cardInfo("computer"));
+						computerTotal.setText(gameObject.generateHandTotal("computer"));
+						comCurrentCard++;
+					}
 					
 					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0) {
 						btnHit.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The player has won!");
+					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2) {
+						btnHit.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The player has busted!");
 					} else if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						btnStay.setEnabled(false);
+						JOptionPane.showMessageDialog(null, "The computer has won!");
+					} else if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+						JOptionPane.showMessageDialog(null, "The computer has busted!");
 					}
 					break;
 				default:
