@@ -20,7 +20,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class blackJackGUI extends JFrame {
-	gameLogic gameObject = new gameLogic();
+	static gameLogic gameObject = new gameLogic();
 	
 	JLabel playerCardOne, playerCardTwo, playerCardThree, playerCardFour, playerCardFive, playerCardSix, playerCardSeven;	
 	JLabel comCardOne, comCardTwo, comCardThree, comCardFour, comCardFive, comCardSix, comCardSeven;
@@ -196,14 +196,21 @@ public class blackJackGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {				
 				switch(playCurrentCard){
 				case 1:
-					playerCardOne.setText(gameObject.cardInfo("player"));
+					Card playerCard = gameObject.cardInfo("player");
+					playerCardOne.setText(playerCard.toString());
 					playerTotal.setText(gameObject.generateHandTotal("player"));
+					playerCardOne.setIcon(gameObject.placeCard(playerCard));
 					playCurrentCard++;
 					
 					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 1) {
-						comCardOne.setText(gameObject.cardInfo("computer"));
+						Card comCard = gameObject.cardInfo("computer");
+						comCardOne.setText(comCard.toString());
 						computerTotal.setText(gameObject.generateHandTotal("computer"));
+						comCardOne.setIcon(gameObject.placeCard(comCard));
 						comCurrentCard++;
+						if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
+							btnStay.setEnabled(false);
+						}
 					}
 					
 					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0) {
@@ -220,14 +227,21 @@ public class blackJackGUI extends JFrame {
 					}
 					break;
 				case 2:
-					playerCardTwo.setText(gameObject.cardInfo("player"));
-					playerTotal.setText(gameObject.generateHandTotal("player"));				
+					playerCard = gameObject.cardInfo("player"); 
+					playerCardTwo.setText(playerCard.toString());
+					playerTotal.setText(gameObject.generateHandTotal("player"));
+					playerCardTwo.setIcon(gameObject.placeCard(playerCard));
 					playCurrentCard++;
 					
 					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 1) {
-						comCardTwo.setText(gameObject.cardInfo("computer"));
+						Card comCard = gameObject.cardInfo("computer");
+						comCardTwo.setText(comCard.toString());
 						computerTotal.setText(gameObject.generateHandTotal("computer"));
+						comCardTwo.setIcon(gameObject.placeCard(comCard));
 						comCurrentCard++;
+						if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
+							btnStay.setEnabled(false);
+						}
 					}
 					
 					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0) {
@@ -244,14 +258,21 @@ public class blackJackGUI extends JFrame {
 					}
 					break;
 				case 3:
-					playerCardThree.setText(gameObject.cardInfo("player"));
-					playerTotal.setText(gameObject.generateHandTotal("player"));				
+					playerCard = gameObject.cardInfo("player");
+					playerCardThree.setText(playerCard.toString());
+					playerTotal.setText(gameObject.generateHandTotal("player"));	
+					playerCardThree.setIcon(gameObject.placeCard(playerCard));
 					playCurrentCard++;
 					
 					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 1) {
-						comCardThree.setText(gameObject.cardInfo("computer"));
+						Card comCard = gameObject.cardInfo("computer");
+						comCardThree.setText(comCard.toString());
 						computerTotal.setText(gameObject.generateHandTotal("computer"));
+						comCardThree.setIcon(gameObject.placeCard(comCard));
 						comCurrentCard++;
+						if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
+							btnStay.setEnabled(false);
+						}
 					}
 					
 					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0) {
@@ -268,14 +289,21 @@ public class blackJackGUI extends JFrame {
 					}
 					break;
 				case 4:
-					playerCardFour.setText(gameObject.cardInfo("player"));
-					playerTotal.setText(gameObject.generateHandTotal("player"));				
+					playerCard = gameObject.cardInfo("player");
+					playerCardFour.setText(playerCard.toString());
+					playerTotal.setText(gameObject.generateHandTotal("player"));		
+					playerCardFour.setIcon(gameObject.placeCard(playerCard));
 					playCurrentCard++;
 					
 					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 1) {
-						comCardFour.setText(gameObject.cardInfo("computer"));
+						Card comCard = gameObject.cardInfo("computer");
+						comCardFour.setText(comCard.toString());
 						computerTotal.setText(gameObject.generateHandTotal("computer"));
+						comCardFour.setIcon(gameObject.placeCard(comCard));
 						comCurrentCard++;
+						if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
+							btnStay.setEnabled(false);
+						}
 					}
 					
 					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0) {
@@ -292,14 +320,21 @@ public class blackJackGUI extends JFrame {
 					}
 					break;
 				case 5:
-					playerCardFive.setText(gameObject.cardInfo("player"));
-					playerTotal.setText(gameObject.generateHandTotal("player"));				
+					playerCard = gameObject.cardInfo("player");
+					playerCardFive.setText(playerCard.toString());
+					playerTotal.setText(gameObject.generateHandTotal("player"));
+					playerCardFive.setIcon(gameObject.placeCard(playerCard));
 					playCurrentCard++;
 					
 					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 1) {
-						comCardFive.setText(gameObject.cardInfo("computer"));
+						Card comCard = gameObject.cardInfo("computer");
+						comCardFive.setText(comCard.toString());
 						computerTotal.setText(gameObject.generateHandTotal("computer"));
+						comCardFive.setIcon(gameObject.placeCard(comCard));
 						comCurrentCard++;
+						if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
+							btnStay.setEnabled(false);
+						}
 					}
 					
 					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0) {
@@ -316,14 +351,21 @@ public class blackJackGUI extends JFrame {
 					}
 					break;
 				case 6:
-					playerCardSix.setText(gameObject.cardInfo("player"));
-					playerTotal.setText(gameObject.generateHandTotal("player"));		
+					playerCard = gameObject.cardInfo("player");
+					playerCardSix.setText(playerCard.toString());
+					playerTotal.setText(gameObject.generateHandTotal("player"));
+					playerCardSix.setIcon(gameObject.placeCard(playerCard));
 					playCurrentCard++;
 					
 					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 1) {
-						comCardSix.setText(gameObject.cardInfo("computer"));
+						Card comCard = gameObject.cardInfo("computer");
+						comCardSix.setText(comCard.toString());
 						computerTotal.setText(gameObject.generateHandTotal("computer"));
+						comCardSix.setIcon(gameObject.placeCard(comCard));
 						comCurrentCard++;
+						if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
+							btnStay.setEnabled(false);
+						}
 					}
 					
 					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0) {
@@ -340,14 +382,21 @@ public class blackJackGUI extends JFrame {
 					}
 					break;
 				case 7:
-					playerCardSeven.setText(gameObject.cardInfo("player"));
-					playerTotal.setText(gameObject.generateHandTotal("player"));				
+					playerCard = gameObject.cardInfo("player");
+					playerCardSeven.setText(playerCard.toString());
+					playerTotal.setText(gameObject.generateHandTotal("player"));	
+					playerCardSeven.setIcon(gameObject.placeCard(playerCard));
 					playCurrentCard++;
 					
 					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 1) {
-						comCardSeven.setText(gameObject.cardInfo("computer"));
+						Card comCard = gameObject.cardInfo("computer");
+						comCardSeven.setText(comCard.toString());
 						computerTotal.setText(gameObject.generateHandTotal("computer"));
+						comCardSeven.setIcon(gameObject.placeCard(comCard));
 						comCurrentCard++;
+						if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
+							btnStay.setEnabled(false);
+						}
 					}
 					
 					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0) {
@@ -378,56 +427,70 @@ public class blackJackGUI extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				switch(comCurrentCard){
 				case 1:
-					comCardOne.setText(gameObject.cardInfo("computer"));
-					computerTotal.setText(gameObject.generateHandTotal("computer"));				
+					Card comCard = gameObject.cardInfo("computer");
+					comCardOne.setText(comCard.toString());
+					computerTotal.setText(gameObject.generateHandTotal("computer"));
+					comCardOne.setIcon(gameObject.placeCard(comCard));
 					comCurrentCard++;
 					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						btnStay.setEnabled(false);
 					}
 					break;
 				case 2:
-					comCardTwo.setText(gameObject.cardInfo("computer"));
-					computerTotal.setText(gameObject.generateHandTotal("computer"));				
+					comCard = gameObject.cardInfo("compter");
+					comCardTwo.setText(comCard.toString());
+					computerTotal.setText(gameObject.generateHandTotal("computer"));	
+					comCardTwo.setIcon(gameObject.placeCard(comCard));
 					comCurrentCard++;
 					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						btnStay.setEnabled(false);
 					}
 					break;
 				case 3:
-					comCardThree.setText(gameObject.cardInfo("computer"));
-					computerTotal.setText(gameObject.generateHandTotal("computer"));				
+					comCard = gameObject.cardInfo("computer");
+					comCardThree.setText(comCard.toString());
+					computerTotal.setText(gameObject.generateHandTotal("computer"));
+					comCardThree.setIcon(gameObject.placeCard(comCard));
 					comCurrentCard++;
 					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						btnStay.setEnabled(false);
 					}
 					break;
 				case 4:
-					comCardFour.setText(gameObject.cardInfo("computer"));
-					computerTotal.setText(gameObject.generateHandTotal("computer"));				
+					comCard = gameObject.cardInfo("computer");
+					comCardFour.setText(comCard.toString());
+					computerTotal.setText(gameObject.generateHandTotal("computer"));
+					comCardFour.setIcon(gameObject.placeCard(comCard));
 					comCurrentCard++;
 					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						btnStay.setEnabled(false);
 					}
 					break;
 				case 5:
-					comCardFive.setText(gameObject.cardInfo("computer"));
-					computerTotal.setText(gameObject.generateHandTotal("computer"));				
+					comCard = gameObject.cardInfo("computer");
+					comCardFive.setText(comCard.toString());
+					computerTotal.setText(gameObject.generateHandTotal("computer"));	
+					comCardFive.setIcon(gameObject.placeCard(comCard));
 					comCurrentCard++;
 					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						btnStay.setEnabled(false);
 					}
 					break;
 				case 6:
-					comCardSix.setText(gameObject.cardInfo("computer"));
-					computerTotal.setText(gameObject.generateHandTotal("computer"));				
+					comCard = gameObject.cardInfo("computer");
+					comCardSix.setText(comCard.toString());
+					computerTotal.setText(gameObject.generateHandTotal("computer"));	
+					comCardSix.setIcon(gameObject.placeCard(comCard));
 					comCurrentCard++;
 					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						btnStay.setEnabled(false);
 					}
 					break;
 				case 7:
-					comCardSeven.setText(gameObject.cardInfo("computer"));
-					computerTotal.setText(gameObject.generateHandTotal("computer"));				
+					comCard = gameObject.cardInfo("computer");
+					comCardSeven.setText(comCard.toString());
+					computerTotal.setText(gameObject.generateHandTotal("computer"));
+					comCardSeven.setIcon(gameObject.placeCard(comCard));
 					comCurrentCard++;
 					if(checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						btnStay.setEnabled(false);
