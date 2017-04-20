@@ -34,10 +34,9 @@ public class gameLogic {
 		String cardRank = userCard.getRank().toString();
 		String cardSuite = userCard.getSuite().toString();
 		StringBuilder sb = new StringBuilder();
-		sb.append("res/" + cardRank.toLowerCase() + "_of_" + cardSuite.toLowerCase());
+		sb.append("/res/" + cardRank.toLowerCase() + "_of_" + cardSuite.toLowerCase() + ".png");
 		String fileLocation = sb.toString();
-		System.out.println(fileLocation);
-		return new ImageIcon(fileLocation);
+		return new ImageIcon(gameLogic.class.getResource(fileLocation));
 	}
 	
 	public String generateHandTotal(String user) {

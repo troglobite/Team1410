@@ -79,112 +79,98 @@ public class blackJackGUI extends JFrame {
 		score.setBounds(960, 13, 58, 16);
 		contentPane.add(score);
 		
-		comCardOne = new JLabel("New label");
-		//comCardOne.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		comCardOne = new JLabel();
 		comCardOne.setMaximumSize(new Dimension(500, 727));
 		comCardOne.setMinimumSize(new Dimension(500, 727));
 		comCardOne.setPreferredSize(new Dimension(500, 727));
 		comCardOne.setBounds(64, 13, 100, 145);
 		contentPane.add(comCardOne);
 		
-		comCardTwo = new JLabel("New label");
-		//comCardTwo.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		comCardTwo = new JLabel();
 		comCardTwo.setPreferredSize(new Dimension(500, 727));
 		comCardTwo.setMinimumSize(new Dimension(500, 727));
 		comCardTwo.setMaximumSize(new Dimension(500, 727));
 		comCardTwo.setBounds(176, 13, 100, 145);
 		contentPane.add(comCardTwo);
 		
-		comCardThree = new JLabel("New label");
-		//comCardThree.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		comCardThree = new JLabel();
 		comCardThree.setPreferredSize(new Dimension(500, 727));
 		comCardThree.setMinimumSize(new Dimension(500, 727));
 		comCardThree.setMaximumSize(new Dimension(500, 727));
 		comCardThree.setBounds(290, 13, 100, 145);
 		contentPane.add(comCardThree);
 		
-		comCardFour = new JLabel("New label");
-		//comCardFour.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		comCardFour = new JLabel();
 		comCardFour.setPreferredSize(new Dimension(500, 727));
 		comCardFour.setMinimumSize(new Dimension(500, 727));
 		comCardFour.setMaximumSize(new Dimension(500, 727));
 		comCardFour.setBounds(402, 13, 100, 145);
 		contentPane.add(comCardFour);
 		
-		comCardFive = new JLabel("New label");
-		//comCardFive.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		comCardFive = new JLabel();
 		comCardFive.setPreferredSize(new Dimension(500, 727));
 		comCardFive.setMinimumSize(new Dimension(500, 727));
 		comCardFive.setMaximumSize(new Dimension(500, 727));
 		comCardFive.setBounds(519, 13, 100, 145);
 		contentPane.add(comCardFive);
 		
-		comCardSix = new JLabel("New label");
-		//comCardSix.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		comCardSix = new JLabel();
 		comCardSix.setPreferredSize(new Dimension(500, 727));
 		comCardSix.setMinimumSize(new Dimension(500, 727));
 		comCardSix.setMaximumSize(new Dimension(500, 727));
 		comCardSix.setBounds(633, 13, 100, 145);
 		contentPane.add(comCardSix);
 		
-		comCardSeven = new JLabel("New label");
-		//comCardSeven.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		comCardSeven = new JLabel();
 		comCardSeven.setPreferredSize(new Dimension(500, 727));
 		comCardSeven.setMinimumSize(new Dimension(500, 727));
 		comCardSeven.setMaximumSize(new Dimension(500, 727));
 		comCardSeven.setBounds(745, 13, 100, 145);
 		contentPane.add(comCardSeven);
 		
-		playerCardOne = new JLabel("New label");
-		//playerCardOne.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		playerCardOne = new JLabel();
 		playerCardOne.setPreferredSize(new Dimension(500, 727));
 		playerCardOne.setMinimumSize(new Dimension(500, 727));
 		playerCardOne.setMaximumSize(new Dimension(500, 727));
 		playerCardOne.setBounds(64, 408, 100, 145);
 		contentPane.add(playerCardOne);
 		
-		playerCardTwo = new JLabel("New label");
-		//playerCardTwo.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		playerCardTwo = new JLabel();
 		playerCardTwo.setPreferredSize(new Dimension(500, 727));
 		playerCardTwo.setMinimumSize(new Dimension(500, 727));
 		playerCardTwo.setMaximumSize(new Dimension(500, 727));
 		playerCardTwo.setBounds(176, 408, 100, 145);
 		contentPane.add(playerCardTwo);
 		
-		playerCardThree = new JLabel("New label");
-		//playerCardThree.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		playerCardThree = new JLabel();
 		playerCardThree.setPreferredSize(new Dimension(500, 727));
 		playerCardThree.setMinimumSize(new Dimension(500, 727));
 		playerCardThree.setMaximumSize(new Dimension(500, 727));
 		playerCardThree.setBounds(290, 408, 100, 145);
 		contentPane.add(playerCardThree);
 		
-		playerCardFour = new JLabel("New label");
-		//playerCardFour.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		playerCardFour = new JLabel();
 		playerCardFour.setPreferredSize(new Dimension(500, 727));
 		playerCardFour.setMinimumSize(new Dimension(500, 727));
 		playerCardFour.setMaximumSize(new Dimension(500, 727));
 		playerCardFour.setBounds(402, 408, 100, 145);
 		contentPane.add(playerCardFour);
 		
-		playerCardFive = new JLabel("New label");
-		//playerCardFive.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		playerCardFive = new JLabel();
 		playerCardFive.setPreferredSize(new Dimension(500, 727));
 		playerCardFive.setMinimumSize(new Dimension(500, 727));
 		playerCardFive.setMaximumSize(new Dimension(500, 727));
 		playerCardFive.setBounds(519, 408, 100, 145);
 		contentPane.add(playerCardFive);
 		
-		playerCardSix = new JLabel("New label");
-		//playerCardSix.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		playerCardSix = new JLabel();
 		playerCardSix.setPreferredSize(new Dimension(500, 727));
 		playerCardSix.setMinimumSize(new Dimension(500, 727));
 		playerCardSix.setMaximumSize(new Dimension(500, 727));
 		playerCardSix.setBounds(633, 408, 100, 145);
 		contentPane.add(playerCardSix);
 		
-		playerCardSeven = new JLabel("New label");
-		//playerCardSeven.setIcon(new ImageIcon(blackJackGUI.class.getResource("/res/2_of_clubs.png")));
+		playerCardSeven = new JLabel();
 		playerCardSeven.setPreferredSize(new Dimension(500, 727));
 		playerCardSeven.setMinimumSize(new Dimension(500, 727));
 		playerCardSeven.setMaximumSize(new Dimension(500, 727));
