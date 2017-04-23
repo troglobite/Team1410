@@ -4,14 +4,14 @@ import javax.swing.ImageIcon;
 
 public class gameLogic {
 	
-	Deck deck = new Deck();
-	Deck playerCards = new Deck();
-	Deck computerCards = new Deck();
+	private static Deck deck = new Deck();
+	private static Deck playerCards = new Deck();
+	private static Deck computerCards = new Deck();
 	
-	int playerHand = 0;
-	int computerHand = 0;
-	Card playerCard;
-	Card computerCard;
+	static int playerHand = 0;
+	static int computerHand = 0;
+	static Card playerCard;
+	static Card computerCard;
 
 	public gameLogic() {
 		playerCards.clearDeck();
@@ -34,10 +34,9 @@ public class gameLogic {
 		String cardRank = userCard.getRank().toString();
 		String cardSuite = userCard.getSuite().toString();
 		StringBuilder sb = new StringBuilder();
-		sb.append("res/" + cardRank.toLowerCase() + "_of_" + cardSuite.toLowerCase());
+		sb.append("/res/" + cardRank.toLowerCase() + "_of_" + cardSuite.toLowerCase() + ".png");
 		String fileLocation = sb.toString();
-		System.out.println(fileLocation);
-		return new ImageIcon(fileLocation);
+		return new ImageIcon(gameLogic.class.getResource(fileLocation));
 	}
 	
 	public String generateHandTotal(String user) {
@@ -79,4 +78,17 @@ public class gameLogic {
 		}
 		
 	}
+	
+	public static void resetGame() {
+		deck = new Deck();
+		playerCards.clearDeck();
+		computerCards.clearDeck();
+		playerHand = 0;
+		computerHand = 0;
+		playerCard = null;
+		computerCard = null;
+	}
+	
+	
+	
 }
