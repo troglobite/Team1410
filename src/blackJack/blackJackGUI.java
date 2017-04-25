@@ -109,7 +109,7 @@ public class blackJackGUI extends JFrame {
 		menuItemLeaderBoard.setHorizontalAlignment(SwingConstants.LEFT);
 		menuItemLeaderBoard.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Leader Board");
+				//System.out.println("Leader Board");
 				gamePanel.setVisible(false);
 				generateLeaderBoardPanel();
 				menuItemGame.setSelected(false);
@@ -152,18 +152,20 @@ public class blackJackGUI extends JFrame {
 				try(PrintWriter pw = new PrintWriter(new FileOutputStream(new File("src\\blackJack\\leaderBoard.txt"), true))) {
 					
 					String result = String.format("%s, %d%n", userName, playerScore);
-					System.out.println(result);
+					//System.out.println(result);
 					pw.append(result);
 					pw.close();
+					
+					fileContents = "";
+					fileContents = updateTextArea();
+					textArea.setText(fileContents + result);
+					textArea.repaint();
+					textArea.revalidate();
+					//System.out.println(fileContents);
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 				}
-				fileContents = "";
-				fileContents = updateTextArea();
-				textArea.setText(fileContents);
-				textArea.repaint();
-				textArea.revalidate();
-				System.out.println(fileContents);
+
 			}
 		});
 		submitButton.setBounds(504, 466, 97, 25);
@@ -188,11 +190,12 @@ public class blackJackGUI extends JFrame {
 		String nextLine = "";
 		
 		try(Scanner reader = new Scanner(blackJackGUI.class.getResourceAsStream("leaderBoard.txt"))) {
-			System.out.println("Updating");
 			while(reader.hasNextLine()) {
 				nextLine = reader.nextLine();
 				sb.append(nextLine + "\n");
+				//System.out.println(nextLine);
 			}
+			reader.close();
 		} catch(ArrayIndexOutOfBoundsException e) {
 			
 		}
@@ -366,17 +369,18 @@ public class blackJackGUI extends JFrame {
 						}
 					}
 					
-					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 && checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+						JOptionPane.showMessageDialog(null, "It was a draw!");
+						playerScore += 5;
+						resetGUI();
+					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
 						JOptionPane.showMessageDialog(null, "The player has won!");
 						playerScore += 10;
 						resetGUI();
 					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						JOptionPane.showMessageDialog(null, "The computer has won!");
 						resetGUI();
-					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
-						JOptionPane.showMessageDialog(null, "It was a draw!");
-						resetGUI();
-					}
+					} 
 					break;
 				case 4:
 					playerCard = gameObject.cardInfo("player");
@@ -396,17 +400,18 @@ public class blackJackGUI extends JFrame {
 						}
 					}
 					
-					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 && checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+						JOptionPane.showMessageDialog(null, "It was a draw!");
+						playerScore += 5;
+						resetGUI();
+					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
 						JOptionPane.showMessageDialog(null, "The player has won!");
 						playerScore += 10;
 						resetGUI();
 					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						JOptionPane.showMessageDialog(null, "The computer has won!");
 						resetGUI();
-					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
-						JOptionPane.showMessageDialog(null, "It was a draw!");
-						resetGUI();
-					}
+					} 
 					break;
 				case 5:
 					playerCard = gameObject.cardInfo("player");
@@ -426,17 +431,18 @@ public class blackJackGUI extends JFrame {
 						}
 					}
 					
-					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 && checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+						JOptionPane.showMessageDialog(null, "It was a draw!");
+						playerScore += 5;
+						resetGUI();
+					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
 						JOptionPane.showMessageDialog(null, "The player has won!");
 						playerScore += 10;
 						resetGUI();
 					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						JOptionPane.showMessageDialog(null, "The computer has won!");
 						resetGUI();
-					}else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
-						JOptionPane.showMessageDialog(null, "It was a draw!");
-						resetGUI();
-					}
+					} 
 					break;
 				case 6:
 					playerCard = gameObject.cardInfo("player");
@@ -456,17 +462,18 @@ public class blackJackGUI extends JFrame {
 						}
 					}
 					
-					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 && checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+						JOptionPane.showMessageDialog(null, "It was a draw!");
+						playerScore += 5;
+						resetGUI();
+					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
 						JOptionPane.showMessageDialog(null, "The player has won!");
 						playerScore += 10;
 						resetGUI();
 					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						JOptionPane.showMessageDialog(null, "The computer has won!");
 						resetGUI();
-					}else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
-						JOptionPane.showMessageDialog(null, "It was a draw!");
-						resetGUI();
-					}
+					} 
 					break;
 				case 7:
 					playerCard = gameObject.cardInfo("player");
@@ -486,17 +493,18 @@ public class blackJackGUI extends JFrame {
 						}
 					}
 					
-					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+					if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 && checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
+						JOptionPane.showMessageDialog(null, "It was a draw!");
+						playerScore += 5;
+						resetGUI();
+					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 0 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
 						JOptionPane.showMessageDialog(null, "The player has won!");
 						playerScore += 10;
 						resetGUI();
 					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 0) {
 						JOptionPane.showMessageDialog(null, "The computer has won!");
 						resetGUI();
-					} else if(checkForBlackJack(Integer.parseInt(playerTotal.getText())) == 2 || checkForBlackJack(Integer.parseInt(computerTotal.getText())) == 2) {
-						JOptionPane.showMessageDialog(null, "It was a draw!");
-						resetGUI();
-					}
+					} 
 					break;
 				default:
 					break;
